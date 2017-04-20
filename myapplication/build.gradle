@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.caomei.cn.myapplication"
+        minSdkVersion 22
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    //
+    compile fileTree(include: '*.jar', dir: 'libs')
+    // 添加依赖。注意，版本号必须一致。
+    // 基础功能 (必需)
+    compile 'com.netease.nimlib:basesdk:3.3.0'
+    // 音视频需要
+//    compile 'com.netease.nimlib:avchat:3.3.0'
+    // 聊天室需要
+    compile 'com.netease.nimlib:chatroom:3.3.0'
+    // 实时会话服务需要
+    compile 'com.netease.nimlib:rts:3.3.0'
+    // 全文检索服务需要
+    compile 'com.netease.nimlib:lucene:3.3.0'
+    compile files('libs/cosinesdk.jar')
+    compile files('libs/nim-basesdk-3.5.5.jar')
+    compile files('libs/nim-chatroom-3.5.5.jar')
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="24dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.activity.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/mFragment_context"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"/>
+    <LinearLayout
+        android:paddingTop="3dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <LinearLayout
+            android:id="@+id/journalism_layout"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.25">
+            <ImageView
+                android:id="@+id/journalism_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新闻"
+                android:layout_marginTop="3dp"
+                android:id="@+id/journalism_txt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/column_layout"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.25">
+            <ImageView
+                android:id="@+id/column_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+            <TextView
+                android:id="@+id/column_txt"
+                android:layout_marginTop="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网图" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/subscribe_layout"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.25">
+            <ImageView
+                android:id="@+id/subscribe_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+            <TextView
+                android:id="@+id/subscribe_txt"
+                android:layout_marginTop="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="电影" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/me_layout"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.25">
+            <ImageView
+                android:id="@+id/me_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+            <TextView
+                android:id="@+id/me_txt"
+                android:layout_marginTop="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
