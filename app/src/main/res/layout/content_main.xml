@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="24dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ui.activity.MainActivity"
     tools:showIn="@layout/activity_main"
@@ -22,80 +21,85 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:weightSum="1">
         <LinearLayout
-            android:id="@+id/journalism_layout"
+            android:id="@+id/Xw_layout"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="0.25">
             <ImageView
-                android:id="@+id/journalism_img"
+                android:id="@+id/Xw_img"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
+                android:src="@mipmap/xw2"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="新闻"
                 android:layout_marginTop="3dp"
-                android:id="@+id/journalism_txt" />
+                android:id="@+id/Xw_txt" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/column_layout"
+            android:id="@+id/Tp_layout"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="0.25">
             <ImageView
-                android:id="@+id/column_img"
+                android:id="@+id/Tp_img"
                 android:layout_width="28dp"
-                android:layout_height="28dp" />
+                android:layout_height="28dp"
+                android:src="@mipmap/tp2"/>
             <TextView
-                android:id="@+id/column_txt"
+                android:id="@+id/Tp_txt"
                 android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="网图" />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/subscribe_layout"
+            android:id="@+id/Sp_layout"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="0.25">
             <ImageView
-                android:id="@+id/subscribe_img"
+                android:id="@+id/Sp_img"
                 android:layout_width="28dp"
-                android:layout_height="28dp" />
+                android:layout_height="28dp"
+                android:src="@mipmap/sp2"/>
             <TextView
-                android:id="@+id/subscribe_txt"
+                android:id="@+id/Sp_txt"
                 android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="电影" />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/me_layout"
+            android:id="@+id/Xs_layout"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="0.25">
             <ImageView
-                android:id="@+id/me_img"
+                android:id="@+id/Xs_img"
                 android:layout_width="28dp"
-                android:layout_height="28dp" />
+                android:layout_height="28dp"
+                android:src="@mipmap/xs2"/>
             <TextView
-                android:id="@+id/me_txt"
+                android:id="@+id/Xs_txt"
                 android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="我" />
+                android:text="小说" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

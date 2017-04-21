@@ -1,13 +1,17 @@
 package com.caomei.cn.cmtool.presenter;
 
+import android.util.Log;
+
 import com.caomei.cn.cmtool.api.Api;
-import com.caomei.cn.cmtool.bean.returns.Abean;
-import com.caomei.cn.cmtool.bean.submit.Submit;
+import com.caomei.cn.cmtool.bean.returns.Newsbean;
+import com.caomei.cn.cmtool.bean.submit.NewsSubmit;
 import com.caomei.cn.cmtool.http.helper.RetrofitHelper;
 import com.caomei.cn.cmtool.http.httputils.HttpUtils;
 import com.caomei.cn.cmtool.module.BaseImp;
 import com.caomei.cn.cmtool.module.Basemodule;
-import com.caomei.cn.cmtool.ui.activity.MainActivity;
+import com.caomei.cn.cmtool.ui.fragment.news.AddNewsFragment;
+
+import java.util.ArrayList;
 
 import rx.Observable;
 
@@ -16,31 +20,36 @@ import rx.Observable;
  */
 public class MainPresenterImp implements BasePresenter {
     private Basemodule mBasemodule;
-    private MainActivity activity;
-    public MainPresenterImp(MainActivity activity){
+    private AddNewsFragment addNewsFragment;
+    public MainPresenterImp(AddNewsFragment addNewsFragment){
         mBasemodule = new BaseImp();
-        this.activity = activity;
+        this.addNewsFragment = addNewsFragment;
     }
     @Override
     public void doGet(String url) {
-        Observable<Abean> observable = RetrofitHelper.getService(url,Api.class).Fllist();
-        HttpUtils.requestNetByGet(observable, new HttpUtils.OnResultListener<Abean>() {
+
+    }
+    @Override
+    public void dopost(String url, NewsSubmit newsSubmit) {
+        Observable<Newsbean> observable = RetrofitHelper.getService(url,Api.class).sub(newsSubmit);
+        HttpUtils.requestNetByPost(observable, new HttpUtils.OnResultListener<Newsbean>() {
             @Override
-            public void onSuccess(Abean abean) {
-                if (abean != null){
-                    activity.getFlList(abean.status,abean.fl_list);
-                }
+            public void onSuccess(Newsbean newsbean) {
+                if (newsbean != null)
+                    addNewsFragment.NewsList(newsbean.reason, (ArrayList<Newsbean.ResultEntity.DataEntity>) newsbean.result.data);
+
             }
             @Override
             public void onError(Throwable error, String msg) {
-
+                Log.e("error msg",msg);
             }
         });
-
     }
 
     @Override
-    public void dopost(String url, Submit submit) {
-
+    public void dopost(String url,String a ,String s) {
+    }
+    @Override
+    public void dopost(String url, String a) {
     }
 }

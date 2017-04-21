@@ -4,4 +4,19 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="blue">#1497DB</color>
+    <color name="black">#BFBFBF</color>
+    <color name="txt">#CCCCCC</color>
+    <color name="fmgtab">#D82008</color>
+    <color name="white">#FFFFFF</color>
+    <color name="titleblue">#3F51B5</color>
+    <color name="orange">#FF9933</color>
+    <color name="green">#99FF99</color>
+    <color name="tvcolor">#F6F5F4</color>
+    <color name="toobar">#A30504</color>
+    <color name="blackh">#000000</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="bg">#E6E6E6</color>
+    <color name="code">#BFBFBF</color>
+    <color name="subbn">#0090FF</color>
+    <color name="txtred">#EA5656</color>
 </resources>

@@ -1,8 +1,10 @@
 package com.caomei.cn.cmtool.api;
 
-import com.caomei.cn.cmtool.bean.returns.Abean;
+import com.caomei.cn.cmtool.bean.returns.Newsbean;
+import com.caomei.cn.cmtool.bean.submit.NewsSubmit;
 
-import retrofit2.http.GET;
+import retrofit2.http.Body;
+import retrofit2.http.POST;
 import rx.Observable;
 
 /**
@@ -10,7 +12,8 @@ import rx.Observable;
  */
 public interface Api {
     //接口域名
-    String BASEURL = "http://www.rongebang.cn";
-    @GET("/toutiao/navs")
-    Observable<Abean>Fllist();
+    String URL = "http://v.juhe.cn";
+    String key = "7decf052c827876ee7cee76107c4ac07";
+    @POST("/toutiao/index?")
+    Observable<Newsbean>sub(@Body NewsSubmit newsSubmit);
 }
