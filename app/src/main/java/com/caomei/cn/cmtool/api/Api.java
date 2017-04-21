@@ -15,6 +15,7 @@ import rx.Observable;
 public interface Api {
     //接口域名
     String URL = "http://v.juhe.cn";
+    String PiUrl = "http://www.mmonly.cc/wmtp/";
     String key = "7decf052c827876ee7cee76107c4ac07";
     @POST("/toutiao/index")
     @FormUrlEncoded

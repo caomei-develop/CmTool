@@ -48,24 +48,37 @@ public class NewsFragment extends BaseFragment{
     }
 
     private void getType() {
+        /**
+         * ,top(头条，默认),shehui(社会),
+         * guonei(国内),guoji(国际),
+         * yule(娱乐),tiyu(体育)junshi(军事),
+         * keji(科技),caijing(财经),shishang(时尚)
+         */
         type.add("top");
         type.add("shehui");
         type.add("guonei");
         type.add("guoji");
         type.add("yule");
         type.add("tiyu");
+        type.add("junshi");
         type.add("keji");
         type.add("caijing");
         type.add("shishang");
     }
 
     private void getTitle() {
-        //"头条", "社会", "国内", "娱乐", "体育", "军事","科技", "财经", "时尚"
+        /**
+         * ,top(头条，默认),shehui(社会),
+         * guonei(国内),guoji(国际),
+         * yule(娱乐),tiyu(体育)junshi(军事),
+         * keji(科技),caijing(财经),shishang(时尚)
+         */
         title.add("头条");
         title.add("社会");
         title.add("国内");
+        title.add("国际");
         title.add("娱乐");
-        title.add("军事");
+        title.add("体育");
         title.add("军事");
         title.add("科技");
         title.add("财经");
