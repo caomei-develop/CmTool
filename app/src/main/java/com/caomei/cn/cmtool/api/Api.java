@@ -1,9 +1,11 @@
 package com.caomei.cn.cmtool.api;
 
 import com.caomei.cn.cmtool.bean.returns.Newsbean;
-import com.caomei.cn.cmtool.bean.submit.NewsSubmit;
 
-import retrofit2.http.Body;
+import java.util.HashMap;
+
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 import rx.Observable;
 
@@ -14,6 +16,7 @@ public interface Api {
     //接口域名
     String URL = "http://v.juhe.cn";
     String key = "7decf052c827876ee7cee76107c4ac07";
-    @POST("/toutiao/index?")
-    Observable<Newsbean>sub(@Body NewsSubmit newsSubmit);
+    @POST("/toutiao/index")
+    @FormUrlEncoded
+    Observable<Newsbean>sub(@FieldMap HashMap<String, String> paramsMap );
 }

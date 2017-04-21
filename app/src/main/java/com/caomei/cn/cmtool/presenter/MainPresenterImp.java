@@ -12,6 +12,7 @@ import com.caomei.cn.cmtool.module.Basemodule;
 import com.caomei.cn.cmtool.ui.fragment.news.AddNewsFragment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import rx.Observable;
 
@@ -27,11 +28,21 @@ public class MainPresenterImp implements BasePresenter {
     }
     @Override
     public void doGet(String url) {
-
     }
     @Override
     public void dopost(String url, NewsSubmit newsSubmit) {
-        Observable<Newsbean> observable = RetrofitHelper.getService(url,Api.class).sub(newsSubmit);
+    }
+
+    @Override
+    public void dopost(String url,String a ,String s) {
+    }
+    @Override
+    public void dopost(String url, String a) {
+    }
+
+    @Override
+    public void dopost(String url, HashMap paramsMap) {
+        Observable<Newsbean> observable = RetrofitHelper.getService(url,Api.class).sub(paramsMap);
         HttpUtils.requestNetByPost(observable, new HttpUtils.OnResultListener<Newsbean>() {
             @Override
             public void onSuccess(Newsbean newsbean) {
@@ -44,12 +55,5 @@ public class MainPresenterImp implements BasePresenter {
                 Log.e("error msg",msg);
             }
         });
-    }
-
-    @Override
-    public void dopost(String url,String a ,String s) {
-    }
-    @Override
-    public void dopost(String url, String a) {
     }
 }
