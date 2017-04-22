@@ -52,9 +52,9 @@ public class PicturesFragment extends BaseFragment{
                     e.printStackTrace();
                 }
                 if (doc != null){
-                    Elements eles=doc.getElementsByTag("a");
+                    Elements eles=doc.getElementsByTag("img");
                     for(Element e :eles) {
-
+                        System.out.print(e);
                     }
 
                 }
