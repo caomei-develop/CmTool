@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.caomei.cn.cmtool.ui.fragment.news.NewsxqActivity">
+    <include layout="@layout/activity_title"/>
     <WebView
         android:id="@+id/Newswebview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </WebView>
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.caomei.cn.cmtool.Listener.BaseAdapterListener;
 import com.caomei.cn.cmtool.R;
 import com.caomei.cn.cmtool.bean.returns.Picture;
 
@@ -33,9 +34,17 @@ public class PictureAdapter  extends  RecyclerView.Adapter<PictureAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder1 holder, int position) {
+    public void onBindViewHolder(ViewHolder1 holder, final int position) {
         holder.titles.setText(listImg.get(position).getAlt());
         Glide.with(context).load(listImg.get(position).getSrc()).centerCrop().into(holder.picture);
+        if (listener != null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.ItemOnClick(view,position);
+                }
+            });
+        }
     }
     @Override
     public int getItemCount() {
@@ -50,5 +59,9 @@ public class PictureAdapter  extends  RecyclerView.Adapter<PictureAdapter.ViewHo
             picture  = (ImageView) v.findViewById(R.id.imageView);
             titles   = (TextView) v.findViewById(R.id.titletxt);
         }
+    }
+    private BaseAdapterListener listener;
+    public void baseAdapterListener(BaseAdapterListener listener) {
+        this.listener = listener;
     }
 }

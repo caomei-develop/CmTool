@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.TextView;
 
 import com.caomei.cn.cmtool.R;
 import com.caomei.cn.cmtool.adapter.NewsViewpager;
@@ -21,6 +22,7 @@ import java.util.List;
 public class NewsFragment extends BaseFragment{
     private TabLayout mXwTabLyout;
     private ViewPager mXwViewpager;
+    private TextView mTitle;
     //
     private NewsViewpager mNewsViewpager;
     private FragmentManager fManager;
@@ -34,6 +36,8 @@ public class NewsFragment extends BaseFragment{
     }
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
+        mTitle = (TextView) view.findViewById(R.id.mTitle);
+        mTitle.setText("新闻");
         mXwTabLyout  = (TabLayout) view.findViewById(R.id.mXwTabLayout);
         mXwViewpager = (ViewPager) view.findViewById(R.id.mXwViewpager);
         mNewsViewpager = new NewsViewpager(getActivity().getSupportFragmentManager(), fragments,title);

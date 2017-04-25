@@ -20,8 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.ProjectActivity" />
-        <activity android:name=".ui.fragment.news.NewsxqActivity"></activity>
+        <activity android:name=".ui.activity.ProjectActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.fragment.news.NewsxqActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.fragment.picture.PicturexqActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
