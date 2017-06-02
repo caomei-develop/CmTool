@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
-import android.widget.Toast;
 
 import com.caomei.cn.cmtool.app.CmApplication;
 
@@ -32,29 +30,6 @@ public abstract class BaseActivity extends AppCompatActivity{
             setContentView(getLayoutId());
         }
     }
-
-    /**
-     *
-     * @param fragment
-
-    //添加fragment
-    public void addFragment(BaseFragment fragment) {
-        if (fragment != null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(getFragmentContentId(), fragment, fragment.getClass().getSimpleName())
-                    .addToBackStack(fragment.getClass().getSimpleName())
-                    .commitAllowingStateLoss();
-        }
-    }
-    //移除fragment
-    public void removeFragment() {
-        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
-            getSupportFragmentManager().popBackStack();
-        } else {
-            finish();
-        }
-    }
-     */
     /**
      *
      * @param cls
@@ -86,21 +61,20 @@ public abstract class BaseActivity extends AppCompatActivity{
         startActivity(intent);
 //        startActivityForResult(intent,0);
     }
-
     //返回鍵监听
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-            if ((System.currentTimeMillis() - exitTime) > 2000) {
-                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
-                exitTime = System.currentTimeMillis();
-            } else {
-                CmApplication.getAppManager().finishAllActivity();
-                CmApplication.getAppManager().AppExit();
-                System.exit(0);
-            }
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+//            if ((System.currentTimeMillis() - exitTime) > 2000) {
+//                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+//                exitTime = System.currentTimeMillis();
+//            } else {
+//                CmApplication.getAppManager().finishAllActivity();
+//                CmApplication.getAppManager().AppExit();
+//                System.exit(0);
+//            }
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
 }

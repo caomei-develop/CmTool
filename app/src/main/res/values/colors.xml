@@ -19,4 +19,35 @@
     <color name="code">#BFBFBF</color>
     <color name="subbn">#0090FF</color>
     <color name="txtred">#EA5656</color>
+
+    <color name="bg_window">#F4F4F4</color>
+    <color name="divider">#e5e5e5</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="bg_action_bar">#ffffff</color>
+    <color name="bg_status_bar">#10000000</color>
+    <color name="c2_trans">#44f4f4f4</color>
+    <color name="c1">#d6a330</color>
+    <color name="c2">#f4f4f4</color>
+    <color name="c3">#333333</color>
+    <color name="c4">#c1c1c1</color>
+    <color name="c5">#f89c12</color>
+    <color name="c6">#777777</color>
+    <color name="c9">#bb881c</color>
+    <color name="white_btn_pressed">#44ffffff</color>
+    <color name="white_btn_unpressed">#77ffffff</color>
+    <color name="gray">#606060</color>
+
+    <item name="c11" type="color">#e6713e</item>
+    <item name="c12" type="color">#e50001</item>
+
+    <color name="text_color_pressed">#444444</color>
+    <color name="text_color_default">#444444</color>
+    <color name="base_start_color_pressed">#d9d9d9</color>
+    <color name="base_end_color_pressed">#d9d9d9</color>
+    <color name="base_start_color_default">#FFFFFF</color>
+    <color name="base_end_color_default">#FFFFFF</color>
+
+    <color name="wave_shaow_color">#00000000</color>
 </resources>
