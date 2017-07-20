@@ -12,6 +12,7 @@ import com.caomei.cn.cmtool.adapter.PictureAdapter;
 import com.caomei.cn.cmtool.api.Api;
 import com.caomei.cn.cmtool.base.BaseFragment;
 import com.caomei.cn.cmtool.bean.returns.Picture;
+import com.caomei.cn.cmtool.ui.fragment.picture.PicturexqActivity;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -51,7 +52,7 @@ public class PicturesFragment extends BaseFragment{
         mPictureAdapter.OnitemListener(new OnitemListener() {
             @Override
             public void ItemOnClick(View v, int position) {
-//                trans(PicturexqActivity.class,Picturexq,"Picturexq");
+                trans(PicturexqActivity.class,Picturexq,"Picturexq");
             }
         });
         Tpdata(Tpurl);
