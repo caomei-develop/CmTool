@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.caomei.cn.cmtool.Listener.BaseAdapterListener;
+import com.caomei.cn.cmtool.Listener.OnitemListener;
 import com.caomei.cn.cmtool.R;
 import com.caomei.cn.cmtool.adapter.NewsAdapter;
 import com.caomei.cn.cmtool.api.Api;
@@ -61,7 +61,7 @@ public class AddNewsFragment extends BaseFragment {
     public void NewsList(final String reason, final ArrayList<Newsbean.ResultEntity.DataEntity> result) {
         if (result !=null){
             mNewsRly.setAdapter(mNewsAdapter = new NewsAdapter(getActivity(),result));
-            mNewsAdapter.baseAdapterListener(new BaseAdapterListener() {
+            mNewsAdapter.OnitemListener(new OnitemListener() {
                 @Override
                 public void ItemOnClick(View v, int position) {
                     String ulr = result.get(position).url;

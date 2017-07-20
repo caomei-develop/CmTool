@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.caomei.cn.cmtool.Listener.BaseAdapterListener;
+import com.caomei.cn.cmtool.Listener.OnitemListener;
 import com.caomei.cn.cmtool.R;
 import com.caomei.cn.cmtool.bean.returns.Newsbean;
 
@@ -130,8 +130,8 @@ public class NewsAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             picture2 =(ImageView) v.findViewById(R.id.img2);
         }
     }
-    private BaseAdapterListener listener;
-    public void baseAdapterListener(BaseAdapterListener listener) {
+    private OnitemListener listener;
+    public void OnitemListener(OnitemListener listener) {
         this.listener = listener;
     }
 }

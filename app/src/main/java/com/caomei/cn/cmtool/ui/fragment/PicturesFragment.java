@@ -6,13 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.caomei.cn.cmtool.Listener.BaseAdapterListener;
+import com.caomei.cn.cmtool.Listener.OnitemListener;
 import com.caomei.cn.cmtool.R;
 import com.caomei.cn.cmtool.adapter.PictureAdapter;
 import com.caomei.cn.cmtool.api.Api;
 import com.caomei.cn.cmtool.base.BaseFragment;
 import com.caomei.cn.cmtool.bean.returns.Picture;
-import com.caomei.cn.cmtool.ui.fragment.picture.PicturexqActivity;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -49,10 +48,10 @@ public class PicturesFragment extends BaseFragment{
         TpRv.setLayoutManager(mGridLayoutManager = new GridLayoutManager(getActivity(),2));
         TpRv.addOnScrollListener(mOnScrollListener);
         TpRv.setAdapter(mPictureAdapter = new PictureAdapter(getActivity(),list));
-        mPictureAdapter.baseAdapterListener(new BaseAdapterListener() {
+        mPictureAdapter.OnitemListener(new OnitemListener() {
             @Override
             public void ItemOnClick(View v, int position) {
-                trans(PicturexqActivity.class,Picturexq,"Picturexq");
+//                trans(PicturexqActivity.class,Picturexq,"Picturexq");
             }
         });
         Tpdata(Tpurl);
