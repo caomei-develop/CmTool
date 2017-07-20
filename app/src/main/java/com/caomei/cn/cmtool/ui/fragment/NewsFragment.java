@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by zw on 2017/4/12.
  */
-public class NewsFragment extends BaseFragment{
+public class NewsFragment extends BaseFragment {
     private TabLayout mXwTabLyout;
     private ViewPager mXwViewpager;
     private TextView mTitle;
@@ -30,17 +30,19 @@ public class NewsFragment extends BaseFragment{
     private List<String> title = new ArrayList<>();
     private List<Fragment> fragments = new ArrayList<>();
     private List<String> type = new ArrayList<>();
+
     @Override
     protected int getLayoutId() {
         return R.layout.newsfragment;
     }
+
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
         mTitle = (TextView) view.findViewById(R.id.mTitle);
         mTitle.setText("新闻");
-        mXwTabLyout  = (TabLayout) view.findViewById(R.id.mXwTabLayout);
+        mXwTabLyout = (TabLayout) view.findViewById(R.id.mXwTabLayout);
         mXwViewpager = (ViewPager) view.findViewById(R.id.mXwViewpager);
-        mNewsViewpager = new NewsViewpager(getActivity().getSupportFragmentManager(), fragments,title);
+        mNewsViewpager = new NewsViewpager(getActivity().getSupportFragmentManager(), fragments, title);
         mXwViewpager.setAdapter(mNewsViewpager);
         mXwTabLyout.setupWithViewPager(mXwViewpager);
         getTitle();
@@ -90,10 +92,10 @@ public class NewsFragment extends BaseFragment{
     }
 
     private void setupViewPager() {
-        if (title != null){
+        if (title != null) {
             for (int i = 0; i < title.size(); i++) {
                 mXwTabLyout.addTab(mXwTabLyout.newTab());
-                fragments.add(AddNewsFragment.newInstance(i,type.get(i)));
+                fragments.add(AddNewsFragment.newInstance(i, type.get(i)));
             }
         }
         mNewsViewpager.notifyDataSetChanged();
